@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Añadir Pisos')
+@section('title', 'Add Floor')
 
 @section('content_header')
     <h1>Add Floor </h1>
@@ -58,10 +58,3 @@
         </div>
     </form>
 @endsection
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-@stop

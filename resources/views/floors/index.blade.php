@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('tittle' , 'Listado de Pisos')
+@section('title' , 'Floor List')
 
 @section('content_header')
 <div class="d-flex justify-content-between">
@@ -33,9 +33,9 @@
                         <form action="{{route('floors.destroy', $floor->id)}}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            <button type="submit"><ion-icon name="trash-outline" class="btn-index"></ion-icon></button>
                         </form>
-                        <a href="{{route('cdds.create', [$floor->torre, $floor])}}" class="btn btn-outline-warning">Add DataRoom</a>
+                        <a href="{{route('cdds.create', [$floor->torre, $floor])}}"><ion-icon name="server-outline" class="btn-index"></ion-icon></a>
                     </td>
                 </tr>
                 @php

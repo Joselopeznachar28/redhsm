@@ -1,11 +1,11 @@
 @extends('adminlte::page')
 
-@section('tittle' , 'Listado de Torres')
+@section('title' , 'Buildings List')
 
 @section('content_header')
 <div class="d-flex justify-content-between">
     <h1>Buildings</h1>
-    <a href="{{route('torres.create')}}" class="btn btn-outline-success">Add</a>
+    <a href="{{route('torres.create')}}"><ion-icon name="add-circle-outline" class="btn-index"></ion-icon></a>
 </div>    
 
 @stop
@@ -32,10 +32,10 @@
                         <form action="{{route('torres.destroy', $torre->id)}}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            <button type="submit"><ion-icon name="trash-outline" class="btn-index"></ion-icon></button>
                         </form>
-                        <a href="{{route('torres.edit', $torre->id)}}" class="btn btn-outline-warning">Edit</a>
-                        <a href="{{route('floors.create', $torre->id)}}" class="btn btn-outline-warning">Add Floors</a>
+                        <a href="{{route('torres.edit', $torre->id)}}"><ion-icon name="create-outline" class="btn-index"></ion-icon></a>
+                        <a href="{{route('floors.create', $torre->id)}}"><ion-icon name="layers-outline" class="btn-index"></ion-icon></a>
                     </td>
                 </tr>
                 @php

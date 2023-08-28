@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('tittle' , 'Listado de Pisos')
+@section('title' , 'Devices List')
 
 @section('content_header')
 <div class="d-flex justify-content-between">
@@ -43,11 +43,12 @@
                         <form action="{{route('devices.destroy', $device->id)}}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            <button type="submit"><ion-icon name="trash-outline" class="btn-index"></button>
                         </form>
-                        <a href="{{route('devices.edit', $device->id)}}" class="btn btn-outline-warning">Edit</a>
-                        <a href="{{route('devices.show',$device)}}" class="btn btn-outline-info">Details</a>
-                        <a href="{{route('ports.create', $device->id)}}" class="btn btn-outline-success">Add Ports</a>
+                        <a href="{{route('devices.edit', $device->id)}}"><ion-icon name="create-outline" class="btn-index"></ion-icon></a>
+                        <a href="{{route('devices.show',$device)}}"><ion-icon name="information-circle-outline" class="btn-index"></ion-icon></a>
+                        <a href="{{route('ports.create', $device->id)}}"><ion-icon name="duplicate-outline" class="btn-index"></ion-icon></a>
+                        <a href="{{route('responses.create', $device)}}"><ion-icon name="warning-outline" class="btn-index"></ion-icon></a>
                     </td>
                 </tr>
                 @php

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a5bc34b806f6c14616b3df08e029cfc",
+    "content-hash": "c5c167c0f2cd7a6e89a78e117d094d4f",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -48,6 +48,57 @@
                 "source": "https://github.com/ColorlibHQ/AdminLTE/tree/v3.2.0"
             },
             "time": "2022-02-07T20:33:09+00:00"
+        },
+        {
+            "name": "becker/laravel-zabbix-api",
+            "version": "0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/becker/laravel-zabbix-api.git",
+                "reference": "2741e6e4e36e486d39ca20edeac246458e7429c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/becker/laravel-zabbix-api/zipball/2741e6e4e36e486d39ca20edeac246458e7429c8",
+                "reference": "2741e6e4e36e486d39ca20edeac246458e7429c8",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Becker\\Zabbix\\ZabbixServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Becker\\Zabbix\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vinicius Becker",
+                    "email": "vinicius@becker.eti.br"
+                }
+            ],
+            "description": "This package provides a Zabbix API library for Laravel Framework",
+            "keywords": [
+                "laravel",
+                "zabbix"
+            ],
+            "support": {
+                "issues": "https://github.com/becker/laravel-zabbix-api/issues",
+                "source": "https://github.com/becker/laravel-zabbix-api/tree/0.3.0"
+            },
+            "time": "2018-02-11T02:17:50+00:00"
         },
         {
             "name": "brick/math",
@@ -2418,6 +2469,52 @@
                 }
             ],
             "time": "2023-02-08T01:06:31+00:00"
+        },
+        {
+            "name": "php-client-zabbix/php-zabbix-api-updated",
+            "version": "v2.4.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kmhamdi00/PhpZabbixApi.git",
+                "reference": "bd0d71af6c4493b969b53d1c47646fc00ccf6d14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kmhamdi00/PhpZabbixApi/zipball/bd0d71af6c4493b969b53d1c47646fc00ccf6d14",
+                "reference": "bd0d71af6c4493b969b53d1c47646fc00ccf6d14",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "build/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dominique Barton",
+                    "email": "phpzabbixapi@confirm.ch",
+                    "homepage": "http://www.confirm.ch",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PhpZabbixApi library",
+            "homepage": "http://github.com/confirm-it-solutions/PhpZabbixApi",
+            "keywords": [
+                "api",
+                "zabbix"
+            ],
+            "support": {
+                "source": "https://github.com/kmhamdi00/PhpZabbixApi/tree/v2.4.6"
+            },
+            "time": "2018-06-25T19:33:04+00:00"
         },
         {
             "name": "phpoption/phpoption",

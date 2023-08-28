@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear DataRoom')
+@section('title', 'Create DataRoom')
 
 @section('content_header')
     <h1>Create DataRoom</h1>
@@ -18,16 +18,9 @@
                 <input type="hidden" class="form-control text-uppercase" name="torre_id" value="{{$torre->id}}">
                 <input type="hidden" class="form-control text-uppercase" name="floor_id" value="{{$floor->id}}">
                 <div class="col-sm-3 mt-auto">
-                    <input type="submit" value="{{ __('Save')}}" class="btn btn-outline-primary">
+                    <button type="submit"><ion-icon name="checkmark-done-outline" class="btn-index"></ion-icon></button>
                 </div>
             </div>
         </div>
     </form>
 @endsection
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-@stop

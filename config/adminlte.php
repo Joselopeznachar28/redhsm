@@ -130,11 +130,11 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
+    'usermenu_header' => true,
     'usermenu_header_class' => 'bg-primary',
-    'usermenu_image' => false,
-    'usermenu_desc' => false,
-    'usermenu_profile_url' => false,
+    'usermenu_image' => true,
+    'usermenu_desc' => true,
+    'usermenu_profile_url' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -293,59 +293,79 @@ return [
         
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
-        ],
-        [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
+        
         // Zabbix items:
         ['header' => 'MONITORING'],
         [
             'text'          => 'Zabbix',
             'url'           => 'http://192.168.1.109/zabbix',
             'target'        => '_blank',
-            'icon'          => 'far fa-fw fa-file',
+            'icon'          => 'fas fa-link',
+        ],
+        [
+            'text'            => 'Parameters',
+            'route'           => 'zabbix.index',
+            'icon'            => 'fas fa-desktop',
         ],
         //gestion
         //torres
         ['header' => 'MANAGEMENT OF CATEGORIES'],
         [
-            'text' => 'Buildings',
+            'text'   => 'Buildings',
             'route' => 'torres.index',
+            'icon'   => 'far fa-building',
+            
         ],
-        //pisos
         [
             'text' => 'Floors',
             'route' => 'floors.index',
+            'icon'   => 'fas fa-layer-group',
         ],
         //cuarto de datos
         [
             'text' => 'DataRoom',
             'route' => 'cdds.index',
+            'icon'   => 'fas fa-database',
         ],
         //dispositivos
         [
             'text' => 'Devices',
             'route' => 'devices.index',
+            'icon'   => 'fas fa-digital-tachograph',
         ],
         //puertos
         [
             'text' => 'Ports',
             'route' => 'ports.index',
+            'icon'   => 'far fa-clone',
+        ],
+        //Incidences
+        [
+            'text' => 'Warning',
+            'icon' => 'fas fa-exclamation-triangle',
+            'submenu' => [
+                [
+                    'text'   => 'Incidences',
+                    'route'  => 'incidences.index',
+                    'icon'   => 'fas fa-list-ol',
+                ],
+                [
+                    'text' => 'Responses',
+                    'route'  => 'responses.index',
+                    'icon' => 'fas fa-list-ol',
+                ],
+            ],
+        ],
+        //users
+        [
+            'text' => 'Users',
+            'route' => 'users.index',
+            'icon'   => 'fas fa-users',
         ],
     ],
 

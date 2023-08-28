@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -42,4 +43,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function adminlte_image(){
+        return asset('img/user_perfil.png');
+    }
+
+    public function adminlte_desc(){
+        return 'Administrador';
+    }
+
+    public function adminlte_profile_url(){
+        $user = Auth::user();
+        return route('users.edit',compact('user'));
+    }
 }

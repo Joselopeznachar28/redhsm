@@ -9,14 +9,42 @@
 }
 
 .switch__port{
-    color: #000;
+    color: #ffffff !important;
     width: 3.4%;
-    border: #ffffff solid 5px;
+    border: #ffffff solid 5px !important;
     padding: .2rem;
     font-weight: bold;
 }
 
 .switch__port:hover{
-    color: #000;
-    border: #0FFF00 solid 5px;
+    color: #0FFF00 !important;
+    border: #0FFF00 solid 5px !important;
+    background: #ffffff !important;
 }
+
+.btn-index{
+    font-size: 2rem;
+    color:#007bff;
+}
+
+.btn-index:hover{
+    color: blue;
+}
+
+button{
+    border: none !important;
+    background-color: transparent !important;
+}
+
+.display-grid-graphics{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* .img-topologia{
+    background-image: url('/img/topologia.png');
+    min-height: 150vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+} */

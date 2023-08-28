@@ -36,7 +36,7 @@ class PortController extends Controller
     public function edit($id){
         $devices = Device::all();
         $port = Port::find($id);
-        return view('ports.edit',compact('ports','devices'));
+        return view('ports.edit',compact('port','devices'));
     }
 
     public function update(Request $request, $id){

@@ -27,4 +27,8 @@ class Device extends Model
     public function ports(){
         return $this->hasMany(Port::class);
     }
+
+    public function incidences(){
+        return $this->hasMany(Incidence::class);
+    }
 }

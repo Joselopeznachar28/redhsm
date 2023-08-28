@@ -40,7 +40,7 @@ class DeviceController extends Controller
     }
 
     public function update(Request $request, $id){
-        $device = Device::findOrFail($id)->update([
+        $newDevice = Device::findOrFail($id)->update([
             'name' => $request->name,
             'mark' => $request->mark,
             'model' => $request->model,

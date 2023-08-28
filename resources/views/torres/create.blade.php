@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear Edificio')
+@section('title', 'Create Building')
 
 @section('content_header')
     <h1>Create Building</h1>
@@ -16,16 +16,9 @@
                     <input type="text" name="name" id="name" class="form-control text-uppercase" placeholder="Insert a name for the Building" required autofocus autocomplete="name">
                 </div>
                 <div class="col-sm-3 mt-auto">
-                    <input type="submit" value="{{ __('Save')}}" class="btn btn-outline-primary">
+                    <button type="submit"><ion-icon name="checkmark-done-outline" class="btn-index"></ion-icon></button>
                 </div>
             </div>
         </div>
     </form>
 @endsection
-
-@section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@section('js')
-@stop

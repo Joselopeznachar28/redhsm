@@ -4,7 +4,11 @@ use App\Http\Controllers\CDDController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\FloorController;
 use App\Http\Controllers\PortController;
+use App\Http\Controllers\ResponseIncidenceController;
 use App\Http\Controllers\TorreController;
+use App\Http\Controllers\ZabbixController;
+use App\Http\Controllers\IncidenceController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +30,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('ZabbixApi', [ZabbixController::class, 'index'])->name('zabbix.index');
+Route::get('ProblemsZabbix/{id}', [ZabbixController::class, 'problems'])->name('zabbix.problems');
+
+//Users
+Route::get('Users', [UserController::class, 'index'])->name('users.index');
+Route::get('User/Create', [UserController::class, 'create'])->name('users.create');
+Route::post('User/Created', [UserController::class, 'store'])->name('users.store');
+Route::get('User/{user:name}/Edit', [UserController::class, 'edit'])->name('users.edit');
+Route::put('User/{user:name}/Edited', [UserController::class, 'update'])->name('users.update');
+Route::delete('User/{user:name}/Destroyed', [UserController::class, 'destroy'])->name('users.destroy');
 
 //torres
 Route::get('Torres', [TorreController::class, 'index'])->name('torres.index');
@@ -68,4 +83,20 @@ Route::get('Editar/Puerto/{id}', [PortController::class, 'edit'])->name('ports.e
 Route::put('Puerto/{id}/Editado', [PortController::class, 'update'])->name('ports.update');
 Route::delete('Puerto/{id}/Eliminado', [PortController::class, 'destroy'])->name('ports.destroy');
 
+//ResponseIncidences
+Route::get('Response/Incidences', [ResponseIncidenceController::class, 'index'])->name('responses.index');
+Route::get('Create/ResponseToIncidences/{device:name}', [ResponseIncidenceController::class, 'create'])->name('responses.create');
+Route::post('Response/Created', [ResponseIncidenceController::class, 'store'])->name('responses.store');
+Route::get('Edit/Response/{response:response}', [ResponseIncidenceController::class, 'edit'])->name('responses.edit');
+Route::put('Response/{response:response}/Edited', [ResponseIncidenceController::class, 'update'])->name('responses.update');
+Route::delete('Response/{response:response}/Destroyed', [ResponseIncidenceController::class, 'destroy'])->name('responses.destroy');
+Route::get('ResponseChangeStatusDone', [ResponseIncidenceController::class, 'done'])->name('responses.done');
+
+//Incidences
+Route::get('Incidences', [IncidenceController::class, 'index'])->name('incidences.index');
+Route::get('Create/Incidence', [IncidenceController::class, 'create'])->name('incidences.create');
+Route::post('Incidence/Created', [IncidenceController::class, 'store'])->name('incidences.store');
+Route::get('Edit/Incidence/{incidence:incidence}', [IncidenceController::class, 'edit'])->name('incidences.edit');
+Route::put('Incidence/{incidence:incidence}/Edited', [IncidenceController::class, 'update'])->name('incidences.update');
+Route::delete('Incidence/{incidence:incidence}/Destroyed', [IncidenceController::class, 'destroy'])->name('incidences.destroy');
 

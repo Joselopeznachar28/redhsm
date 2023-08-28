@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('tittle' , 'Ports of Index')
+@section('title' , 'Ports List')
 
 @section('content_header')
 <div class="d-flex justify-content-between">
@@ -22,7 +22,7 @@
                 <th>Type</th>
                 <th>Port</th>
                 <th>Name</th>
-                <th>speed</th>
+                <th>Speed</th>
                 <th>Vlan</th>
                 <th>Options</th>
             </tr>
@@ -41,10 +41,9 @@
                         <form action="{{route('ports.destroy', $port->id)}}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            <button type="submit"><ion-icon name="trash-outline" class="btn-index"></button>
                         </form>
-                        <a href="{{route('ports.edit', $port->id)}}" class="btn btn-outline-warning">Edit</a>
-                        <a href="#" class="btn btn-outline-info">Details</a>
+                        <a href="{{route('ports.edit', $port->id)}}"><ion-icon name="create-outline" class="btn-index"></ion-icon></a>
                     </td>
                 </tr>
                 @php
