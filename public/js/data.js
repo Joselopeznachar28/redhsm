@@ -3,6 +3,9 @@ let data = [];
 let done = [];
 let notDone = [];
 
+let labelsAll = [];
+let dataAll = [];
+
 
 for(let i in arrayData){
   let array = arrayData[i];
@@ -12,6 +15,11 @@ for(let i in arrayData){
     done.push(array[key].done);
     notDone.push(array[key].notDone);
   }
+}
+
+for (let i in arrayDataAll) {
+  labelsAll.push(arrayDataAll[i].name);
+  dataAll.push(arrayDataAll[i].count);
 }
 
 
@@ -121,3 +129,39 @@ let myChartNotDone = {
 var myGraficDone = document.getElementById('myGraficNotDone');
 // Le pasamos el grafico y la data para representarlo
 window.pie = new Chart(myGraficNotDone,myChartNotDone);
+
+let myChartDataGeneral = {
+  // Tipo de Grafica
+  type:"line", 
+  // Le pasamos la data
+  data:{
+    labels: labelsAll,
+    datasets:[{
+      label: 'General Data',
+      data : dataAll,
+      borderColor: 'rgb(75, 192, 192)',
+      tension: 1,
+    }],
+  },
+  options:{
+    responsive:true,
+    animations: {
+      tension: {
+        duration: 1000,
+        easing: 'linear',
+        from: 1,
+        to: 0,
+        loop: true
+      }
+    },
+    scales: {
+      y: { // defining min and max so hiding the dataset does not change scale range
+        min: 0,
+      }
+    }
+  }
+}
+// Seleccionamos el Canvas
+var myGraficData = document.getElementById('myGraficData');
+// Le pasamos el grafico y la data para representarlo
+window.pie = new Chart(myGraficData,myChartDataGeneral);

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title' , 'Listado de Pisos')
+@section('title' , 'DataRoom List')
 
 @section('content_header')
 <div class="d-flex justify-content-between">

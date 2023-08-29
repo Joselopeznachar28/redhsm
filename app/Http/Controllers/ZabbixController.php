@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\CDD;
+use App\Models\Device;
+use App\Models\Floor;
 use App\Models\Incidence;
 use App\Models\ResponseIncidence;
+use App\Models\Torre;
+use App\Models\User;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -16,8 +21,39 @@ class ZabbixController extends Controller
     /* ----------------------------DATA GRAPH -----------------------------------------------------------------------------------------*/
 
         $arrayData = [];
-
+        
+        $buildings = Torre::all()->count();
+        $dataroom = CDD::all()->count();
+        $devices = Device::all()->count();
+        $users = User::all()->count();
+        $warnings = ResponseIncidence::all()->count();
         $incidences = Incidence::with('responses')->get();
+        $arrayDataAll = [
+            [
+                'name' => 'Buildings',
+                'count' => $buildings,
+            ],
+            [
+                'name' => 'DataRoom',
+                'count' => $dataroom,
+
+            ],
+            [
+                'name' => 'Devices',
+                'count' => $devices,
+
+            ],
+            [
+                'name' => 'Users',
+                'count' => $users,
+
+            ],
+            [
+                'name' => 'Warnings',
+                'count' => $warnings,
+
+            ],
+        ];
         
         foreach ($incidences as $incidence){
             $responses = $incidence->responses;
@@ -34,11 +70,6 @@ class ZabbixController extends Controller
             }
         }
         array_push($arrayData,$object);
-
-        // $incidences['incidenceDones']['count'] = $incidenceDone->count();
-
-        // foreach ($incidenceNotDones as  $incidenceNotDone) {
-        //     array_push($incidences['incidenceNotDones']['incidenceNotDone'],$incidenceNotDone);
 
 /* ----------------------------API ZABBIX INIT-----------------------------------------------------------------------------------------*/
 
@@ -134,6 +165,6 @@ class ZabbixController extends Controller
             array_push($array, $objectProblems);
         }
 
-        return view('zabbix.index',compact('array','arrayData'));
+        return view('zabbix.index',compact('array','arrayData','arrayDataAll'));
     }  
 }

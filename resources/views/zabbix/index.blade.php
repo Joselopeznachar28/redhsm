@@ -10,11 +10,11 @@
 
     @section('content')
 
-        {{-- <div class="img-topologia">
-        </div> --}}
+        <div>
+            <canvas id="myGraficData"></canvas>
+        </div><br>
 
         <div class="display-grid-graphics">
-
             <div>
                 <canvas id="myGraficNovedades"></canvas>
             </div>
@@ -25,7 +25,7 @@
                 <canvas id="myGraficNotDone"></canvas>
             </div>
 
-        </div>
+        </div><br>
 
         <table class="table table-striped">
             <thead class="text-center">
@@ -102,6 +102,9 @@
 
     @section('adminlte_js')
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script>const arrayData = @json($arrayData);</script>
+        <script>
+            const arrayData = @json($arrayData);
+            const arrayDataAll = @json($arrayDataAll);
+        </script>
         <script src="{{ asset('js/data.js') }}"></script>
     @stop
